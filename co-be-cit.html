@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Science of Science</title>
+		
+		<link href = "./css/bootstrap.min.css" rel = "stylesheet">
+		<link rel="shortcut icon" href="img/logo.png" >
+		<link href="./css/nifty.min.css" rel="stylesheet">
+		
+		<!--Nifty Premium Icon [ DEMONSTRATION ]-->
+		<link href="./css/nifty-demo-icons.min.css" rel="stylesheet">
+		
+		<!--Demo [ DEMONSTRATION ]-->
+		<link href="./css/nifty-demo-icons.min.css" rel="stylesheet">
+		<link href="./css/nifty-demo.min.css" rel="stylesheet">
+		<link href="./css/font-awesome.min.css" rel="stylesheet">
+		
+		
+		<!--JAVASCRIPT-->
+		<!--=================================================-->
+		
+		<!--Pace - Page Load Progress Par [OPTIONAL]-->
+		<link href="./css/pace.min.css" rel="stylesheet">
+		   
+		<script src="./js/pace.min.js"></script>
+		   
+		
+		
+		<!--jQuery [ REQUIRED ]-->
+		<script src="./js/jquery-2.2.4.min.js"></script>
+		
+		
+		<!--BootstrapJS [ RECOMMENDED ]-->
+		<script src="./js/bootstrap.min.js"></script>
+		
+		
+		<!--NiftyJS [ RECOMMENDED ]-->
+		<script src="./js/nifty.min.js"></script>
+		<script src="./js/icons.js"></script>
+		
+		
+		<script src="./js/echarts.min.js"></script>
+		
+		
+		<!--=================================================-->
+		
+		<!--Demo script [ DEMONSTRATION ]-->
+		<script src="./js/nifty-demo.min.js"></script>   
+		   
+	</head>
+
+<body>
+
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+        
+        <!--NAVBAR-->
+        <!--===================================================-->
+        <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="./index.html" class="navbar-brand">
+                        <img src="./img/logo.png" alt="Nifty Logo" class="brand-icon">
+                        <div class="brand-title">
+                            <span class="brand-text">HOME</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="demo-pli-view-list"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+					
+                    <ul class="nav navbar-top-links pull-left">
+                        <h4> Data Visualization based on Science of Science </h4>
+                    </ul>
+					
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                <div id="page-content">
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+					<h2 class="text-main pad-btm bord-btm">Co-Cited Network</h2><a href="degree co-reference.html"><button type="button" class="btn btn-info" style="margin-right: 50px;height: 50px;font-size:large">The degree of distribution</button></a>
+					</div>
+
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
+               
+				<div style="display:flex;justify-content:space-between;align-items:center;">
+				<h3 class="text-main pad-btm bord-btm">The co-citation and co-cited networks are built upon the citation network, both of which are undirected.
+				<p>In the co-cited network, each node is also a paper; if both papers A and B are cited by a third paper, there is a link between them.  </p>
+				</h3>
+				</div>
+			
+			<div style="display: flex;flex-direction: row;">
+			 <!--===================================================--> 
+			
+			 <div class="row" style="height: 700px; width: 800px; align-self: auto;margin: 5px;" id="guanxi"></div>
+			<hr>
+			 <div class="row" style="height: 700px; width: 800px; align-self: auto;margin: 5px;" id="guanxi2"></div>
+			<hr>
+			<div class="row" style="height: 700px; width: 800px; align-self: auto; margin: 5px;" id="guanxi3"></div>
+					
+			</div>
+			
+
+				
+				    <script type="text/javascript">
+				        window.onresize = function () {
+				            myChart.resize();
+				        }
+						
+				        $.ajaxSetup({ async: false });
+				        var myChart = echarts.init(document.getElementById("guanxi"));
+				        myChart.showLoading();
+				        var rela = { "data": [], "links": [] };
+						
+				        $.getJSON('./data/co-be-cit_2010.json', function (json) {
+				            rela = json;
+				        });
+						console.log(rela)
+				        myChart.hideLoading();
+				        option = {
+							title: {
+								text: 'Co-Cited Network in 2010',
+								subtext: 'By ecStat.regression',
+								//sublink: 'https://github.com/ecomfe/echarts-stat',
+								left: 'center'
+							},
+							color:['#ECAD9E','#D6D5B7', '#F4606C','#D1BA74',  '#ca8622', '#E6CEAC', '#c4ccd3','#c23531','#2f4554', '#61a0a8', '#d48265'],
+				            animationDurationUpdate: 1500,
+				            animationEasingUpdate: 'quinticInOut',
+							tooltip: {
+							},
+				            series: [
+				                {
+				                    type: 'graph',
+				                    layout: 'force',
+				                    symbolSize: 45,
+									itemStyle:'rect',
+				                    edgeSymbol: ['circle', 'arrow'],
+				                    edgeSymbolSize: [4, 4],
+				                    edgeLabel: {
+				                        normal: {
+				                            show: true,
+				                            textStyle: {
+				                                fontSize: 10
+				                            },
+				                            formatter: "{c}"
+				                        }
+				                    },
+				                    focusNodeAdjacency: true,
+				                    draggable: true,
+				                    roam: true,
+				                    categories: [
+									{
+										name:'0'
+									},
+									{
+										name:'1'
+									},
+									{
+										name:'2'
+									},
+									{
+				                        name: '3',
+				                    }, 
+									{
+				                        name: '4',
+				                    },
+									{
+									    name: '5',
+									}
+				                    ],
+				                    label: {
+				                        normal: {
+				                            show: false,
+											textStyle: {
+												color: "white",
+				                                fontSize: 25
+				                            }	
+				                        },
+										emphasis:{
+											show:false
+										}
+										
+				                    },
+				                    force: {
+				                        repulsion: 1000,
+										edgeLength:[10, 50]
+										//layoutAnimation: false
+				                    },
+				                    lineStyle: {
+				                        normal: {
+				                            opacity: 0.9,
+				                            width: 1,
+				                            curveness: 0.3
+				                        }
+				                    },
+				                    // progressiveThreshold: 700,
+									data:rela.data,
+				                    links: rela.links
+				                }
+				            ]
+				        };
+				        myChart.setOption(option, true);
+				    </script>
+				
+				    <script type="text/javascript">
+				        window.onresize = function () {
+				            myChart.resize();
+				        }
+						
+				        $.ajaxSetup({ async: false });
+				        var myChart = echarts.init(document.getElementById("guanxi2"));
+				        myChart.showLoading();
+				        var rela = { "data": [], "links": [] };
+						
+				        $.getJSON('./data/co-be-cit_2015.json', function (json) {
+				            rela = json;
+				        });
+						console.log(rela)
+				        myChart.hideLoading();
+				        option = {
+							title: {
+								text: 'Co-Cited Network in 2015',
+								subtext: 'By ecStat.regression',
+								//sublink: 'https://github.com/ecomfe/echarts-stat',
+								left: 'center'
+							},
+							color:['#ECAD9E','#D6D5B7', '#F4606C','#D1BA74',  '#ca8622', '#E6CEAC', '#c4ccd3','#c23531','#2f4554', '#61a0a8', '#d48265'],
+				            animationDurationUpdate: 1500,
+				            animationEasingUpdate: 'quinticInOut',
+							tooltip: {
+							},
+				            series: [
+				                {
+				                    type: 'graph',
+				                    layout: 'force',
+				                    symbolSize: 45,
+									itemStyle:'rect',
+				                    edgeSymbol: ['circle', 'arrow'],
+				                    edgeSymbolSize: [4, 4],
+				                    edgeLabel: {
+				                        normal: {
+				                            show: true,
+				                            textStyle: {
+				                                fontSize: 10
+				                            },
+				                            formatter: "{c}"
+				                        }
+				                    },
+				                    focusNodeAdjacency: true,
+				                    draggable: true,
+				                    roam: true,
+				                    categories: [
+									{
+										name:'0'
+									},
+									{
+										name:'1'
+									},
+									{
+										name:'2'
+									},
+									{
+				                        name: '3',
+				                    }, 
+									{
+				                        name: '4',
+				                    },
+									{
+									    name: '5',
+									}
+				                    ],
+				                    label: {
+				                        normal: {
+				                            show: false,
+											textStyle: {
+												color: "white",
+				                                fontSize: 25
+				                            }	
+				                        },
+										emphasis:{
+											show:false
+										}
+										
+				                    },
+				                    force: {
+				                        repulsion: 1000,
+										edgeLength:[10, 50]
+										//layoutAnimation: false
+				                    },
+				                    lineStyle: {
+				                        normal: {
+				                            opacity: 0.9,
+				                            width: 1,
+				                            curveness: 0.3
+				                        }
+				                    },
+				                    // progressiveThreshold: 700,
+									data:rela.data,
+				                    links: rela.links
+				                }
+				            ]
+				        };
+				        myChart.setOption(option, true);
+				    </script>
+					
+				    <script type="text/javascript">
+				        window.onresize = function () {
+				            myChart.resize();
+				        }
+						
+				        $.ajaxSetup({ async: false });
+				        var myChart = echarts.init(document.getElementById("guanxi3"));
+				        myChart.showLoading();
+				        var rela = { "data": [], "links": [] };
+						
+				        $.getJSON('./data/co-be-cit_2020.json', function (json) {
+				            rela = json;
+				        });
+						console.log(rela)
+				        myChart.hideLoading();
+				        option = {
+							title: {
+								text: 'Co-Cited Network in 2020',
+								subtext: 'By ecStat.regression',
+								//sublink: 'https://github.com/ecomfe/echarts-stat',
+								left: 'center'
+							},
+							color:['#ECAD9E','#D6D5B7', '#F4606C','#D1BA74',  '#ca8622', '#E6CEAC', '#c4ccd3','#c23531','#2f4554', '#61a0a8', '#d48265'],
+				            animationDurationUpdate: 1500,
+				            animationEasingUpdate: 'quinticInOut',
+							tooltip: {
+							},
+				            series: [
+				                {
+				                    type: 'graph',
+				                    layout: 'force',
+				                    symbolSize: 45,
+									itemStyle:'rect',
+				                    edgeSymbol: ['circle', 'arrow'],
+				                    edgeSymbolSize: [4, 4],
+				                    edgeLabel: {
+				                        normal: {
+				                            show: true,
+				                            textStyle: {
+				                                fontSize: 10
+				                            },
+				                            formatter: "{c}"
+				                        }
+				                    },
+				                    focusNodeAdjacency: true,
+				                    draggable: true,
+				                    roam: true,
+				                    categories: [
+									{
+										name:'0'
+									},
+									{
+										name:'1'
+									},
+									{
+										name:'2'
+									},
+									{
+				                        name: '3',
+				                    }, 
+									{
+				                        name: '4',
+				                    },
+									{
+									    name: '5',
+									}
+				                    ],
+				                    label: {
+				                        normal: {
+				                            show: false,
+											textStyle: {
+												color: "white",
+				                                fontSize: 25
+				                            }	
+				                        },
+										emphasis:{
+											show:false
+										}
+										
+				                    },
+				                    force: {
+				                        repulsion: 1000,
+										edgeLength:[10, 50]
+										//layoutAnimation: false
+				                    },
+				                    lineStyle: {
+				                        normal: {
+				                            opacity: 0.9,
+				                            width: 1,
+				                            curveness: 0.3
+				                        }
+				                    },
+				                    // progressiveThreshold: 700,
+									data:rela.data,
+				                    links: rela.links
+				                }
+				            ]
+				        };
+				        myChart.setOption(option, true);
+				    </script>
+				    
+              <div class="row">
+                
+                
+					
+					
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
+
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+			<script src="js/try.js"></script>
+ 
+
+        </div>
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer">
+           <p class="pad-lft">Copyright&#0169; 2020 科学学可视化  &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;All Rights Reserved </p>
+        </footer>
+
+        <!--===================================================-->
+        <!-- END FOOTER -->
+        <!-- SCROLL PAGE BUTTON -->
+        <!--===================================================-->
+        <button class="scroll-top btn">
+            <i class="pci-chevron chevron-up"></i>
+        </button>
+        <!--===================================================-->
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+	
+   <script type="text/javascript">
+    $(document).keypress(function (e) {
+        // 回车键事件  
+        if (e.which == 13) {
+            search();
+        }
+    });
+    window.onresize = function () {
+
+        myChart.resize();
+    }
+
+    $.ajaxSetup({ async: false });
+    var myChart = echarts.init(document.getElementById("guanxi"));
+    myChart.showLoading();
+
+    myChart.hideLoading();
+    option = {
+        // backgroundColor: "white",
+        title: {
+            // text: '红楼梦人物关系图',
+            textStyle: {
+                // color: "white",
+                fontWeight: "lighter",
+            }
+        },
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        legend: {
+            x: "center",
+            show: true,
+            data: ["贾家荣国府", "贾家宁国府", "王家", "史家", "薛家", "其他", "林家"]
+        },
+        series: [
+            {
+                type: 'graph',
+                layout: 'force',
+                symbolSize: 50,
+                edgeSymbol: ['circle', 'arrow'],
+                edgeSymbolSize: [4, 4],
+                edgeLabel: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            fontSize: 10
+                        },
+                        formatter: "{c}"
+                    }
+                },
+                force: {
+                    repulsion: 2500,
+                    edgeLength: [10, 100]
+                },
+                focusNodeAdjacency: true,
+                draggable: true,
+                roam: true,
+                categories: [{
+                    name: '贾家荣国府',
+                    // itemStyle: {
+                    //     normal: {
+                    //         color: "#009800",
+                    //     }
+                    // }
+                }, {
+                    name: '贾家宁国府',
+                    // itemStyle: {
+                    //     normal: {
+                    //         color: "#4592FF",
+                    //     }
+                    // }
+                }, {
+                    name: '王家',
+                    // itemStyle: {
+                    //     normal: {
+                    //         color: "#3592F",
+                    //     }
+                    // }
+                },
+                {
+                    name: '史家',
+                }, {
+                    name: '薛家',
+                }, {
+                    name: '其他',
+                },
+                {
+                    name: '林家',
+                }
+                ],
+                label: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            fontSize: 10
+                        },
+                    }
+                },
+                force: {
+                    repulsion: 100
+                },
+                tooltip: {
+                    formatter: function (node) { // 区分连线和节点，节点上额外显示其他数字
+                        if (!node.value) {
+                            return node.data.name;
+                        } else {
+                            return node.data.name + ":" + node.data.showNum;
+                        }
+                    },
+                },
+                lineStyle: {
+                    normal: {
+                        opacity: 0.9,
+                        width: 1,
+                        curveness: 0.3
+                    }
+                },
+                // progressiveThreshold: 700,
+                nodes: [],
+                links: [],
+
+
+
+            }
+        ]
+    };
+    function search() {
+
+        $.getJSON('/search_name', {
+            name: $("#search").val(),
+
+        }, function (json) {
+
+            option.series[0].nodes = json.data.map(function (node, idx) {
+                node.id = idx;
+                return node;
+            });
+
+            option.series[0].links = json.links;
+
+            myChart.setOption(option, true);
+
+        });
+    }
+
+    $(".col-lg-4 a").click(function () {
+       
+        $.getJSON('/search_name', {
+            name: $(this).attr("data"),
+
+        }, function (json) {
+
+            option.series[0].nodes = json.data.map(function (node, idx) {
+                node.id = idx;
+                return node;
+            });
+
+            option.series[0].links = json.links;
+
+            myChart.setOption(option, true);
+
+        })
+    });
+</script>
+</body>
+</html>

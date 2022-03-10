@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Science of Science</title>
+		
+		<link href = "./css/bootstrap.min.css" rel = "stylesheet">
+		<link rel="shortcut icon" href="img/logo.png" >
+		<link href="./css/nifty.min.css" rel="stylesheet">
+		
+		<!--Nifty Premium Icon [ DEMONSTRATION ]-->
+		<link href="./css/nifty-demo-icons.min.css" rel="stylesheet">
+		
+		<!--Demo [ DEMONSTRATION ]-->
+		<link href="./css/nifty-demo-icons.min.css" rel="stylesheet">
+		<link href="./css/nifty-demo.min.css" rel="stylesheet">
+		<link href="./css/font-awesome.min.css" rel="stylesheet">
+		
+		
+		<!--JAVASCRIPT-->
+		<!--=================================================-->
+		
+		<!--Pace - Page Load Progress Par [OPTIONAL]-->
+		<link href="./css/pace.min.css" rel="stylesheet">
+		   
+		<script src="./js/pace.min.js"></script>
+		   
+		
+		
+		<!--jQuery [ REQUIRED ]-->
+		<script src="./js/jquery-2.2.4.min.js"></script>
+		
+		
+		<!--BootstrapJS [ RECOMMENDED ]-->
+		<script src="./js/bootstrap.min.js"></script>
+		
+		
+		<!--NiftyJS [ RECOMMENDED ]-->
+		<script src="./js/nifty.min.js"></script>
+		<script src="./js/icons.js"></script>
+		
+		
+		<script src="./js/echarts.min.js"></script>
+		<script src='https://cdn.bootcss.com/echarts/3.7.0/echarts.simple.js'></script>
+		<script src="js/echarts-wordcloud.js"></script>
+		
+		<!--=================================================-->
+		
+		<!--Demo script [ DEMONSTRATION ]-->
+		<script src="./js/nifty-demo.min.js"></script>   
+		   
+	</head>
+
+<body>
+
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+        
+        <!--NAVBAR-->
+        <!--===================================================-->
+        <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="./index.html" class="navbar-brand">
+                        <img src="./img/logo.png" alt="Nifty Logo" class="brand-icon">
+                        <div class="brand-title">
+                            <span class="brand-text">HOME</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="demo-pli-view-list"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+					
+                    <ul class="nav navbar-top-links pull-left">
+                        <h4>Data Visualization based on Science of Science</h4>
+                    </ul>
+					
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                <!--Page content-->
+				<h2 class="text-main pad-btm bord-btm">&nbsp; &nbsp;Relative Statisitcs</h2>
+                <!--===================================================-->
+                <div id="page-content">
+                    
+				<h2 class="text-main pad-btm bord-btm">
+								
+				<p>  &nbsp; &nbsp;The area (NoC) witnesses an entire lifecycle, as shown in following figures, including 
+				<br><br>
+				&nbsp; - the infantry (2000-2006)
+				<br> 
+				&nbsp; - the flourishing and climax period (2007-2014)
+				<br>&nbsp; - and the saturation period (2014 up to now)
+				<br>
+				<br> &nbsp; measured by the number of publications and new authors per year. 	</p>
+				
+				</h2>
+			<h1> *  New Authors Per Year</h1>
+				<div style="display:flex;justify-content:space-between;align-items:center;">
+
+				</div>		
+			<div id="chart3" style="width: 1600px;height:500px; margin: auto;"></div>
+			<br><br><hr>
+			
+			<h1> *  New Papers Per Year</h1>
+			
+			<div id="chart4" style="width: 1600px;height:500px; margin: auto;"></div>
+			<br><br><hr>
+
+
+			<h1> *  Comparison</h1>
+
+			<div id="container2" style="width: 1600px;height:500px; margin: auto;"></div>
+			<br><br><hr>
+		<h1> *  Author Lifetime</h1>	
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+         
+				<h2 class="text-main pad-btm bord-btm">
+				
+					<p> &nbsp; &nbsp; We study the  lifetime (the interval between the year an author first publish a paper and the year he/she publish for last time). </p>
+				<br>
+				<p>  &nbsp; &nbsp; Note that, due to current time, many of the authors have publications up to now (2019). Following figure shows the active career time of six most productive authors. 	</p>
+				<p>
+					 &nbsp; &nbsp; The maximum lifetime is 20 years, i.e., those pioneers in NoC; however, these long lifetime authors are few. Most of the authors have a lifetime of only 1 or 2 years. 
+					<br> <br>
+					 &nbsp; &nbsp; The reason is that, these authors are students, and they do not remain in the academia after publishing one or two papers and graduated. 
+				</p>
+				</h2>
+           </div>
+		   
+			<div id="chart2" style="width: 1600px;height:400px; margin: auto;"></div>
+					<br><br><hr>
+			<h1> *  Author Subjects</h1>
+				<div style="display:flex;justify-content:space-between;align-items:center;">
+				         
+								<h2 class="text-main pad-btm bord-btm">
+	
+								<p>  &nbsp; &nbsp;In early days, new authors chose flow control, emerging technology, and NoC for memory. 	</p>
+								<p>
+									 &nbsp; &nbsp; The maximum lifetime is 20 years, i.e., those pioneers in NoC; however, these long lifetime authors are few. Most of the authors have a lifetime of only 1 or 2 years. 
+									<br> <br>
+									 &nbsp; &nbsp; However, more recently, fewer people are choosing these subjects. Instead, NoC for SiP (a.k.a, chiplet systems), routing and NoC for different applications are chosen by more new authors, which reflects the frontier of the NoC area. 
+								</p>
+								</h2>
+				</div>
+			<div id="chart5" style="width: 1600px;height:500px; margin: auto;"></div>
+
+			
+	       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+	       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+	       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+	    
+	<script type="text/javascript">
+		var dom = document.getElementById("chart3");
+		var myChart = echarts.init(dom);
+		var app = {};
+		option = null;
+		var base = +new Date(1968, 9, 3);
+		var oneDay = 24 * 3600 * 1000;
+		var date = [];
+		var data = [];
+		
+		 
+		    date.push("2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020");
+		    data.push(0,25,30,51,95,100,50,180,153,245,170,173,119,124,149,122,105,100,96,94);
+		
+		
+		option = {
+		    tooltip: {
+		        trigger: 'axis',
+		        position: function (pt) {
+		            return [pt[0], '10%'];
+		        }
+		    },
+		    title: {
+		        left: 'center',
+		        text: 'New Author Per Year',
+		    },
+		    toolbox: {
+		        feature: {
+		            dataZoom: {
+		                yAxisIndex: 'none'
+		            },
+		            restore: {},
+		            saveAsImage: {}
+		        }
+		    },
+		    xAxis: {
+		        type: 'category',
+		        boundaryGap: false,
+		        data: date
+		    },
+		    yAxis: {
+		        type: 'value',
+		        boundaryGap: [0, '100%']
+		    },
+		    dataZoom: [{
+		        type: 'inside',
+		        start: 0,
+		        end: 100
+		    }, {
+		        start: 0,
+		        end: 10,
+		        handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+		        handleSize: '80%',
+		        handleStyle: {
+		            color: '#fff',
+		            shadowBlur: 3,
+		            shadowColor: 'rgba(0, 0, 0, 0.6)',
+		            shadowOffsetX: 2,
+		            shadowOffsetY: 2
+		        }
+		    }],
+		    series: [
+		        {
+		            name: 'Number of New Author',
+		            type: 'line',
+		            smooth: true,
+		            symbol: 'none',
+		            sampling: 'average',
+		            itemStyle: {
+		                color: '#7b00b9'
+		            },
+		            areaStyle: {
+		                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+		                    offset: 0,
+		                    color: '#7b00b9'
+		                }, {
+		                    offset: 1,
+		                    color: '#3fbaf3'
+		                }])
+		            },
+		            data: data
+		        }
+		    ]
+		};
+		;
+		if (option && typeof option === "object") {
+		    myChart.setOption(option, true);
+		}
+		</script>
+		
+		
+		
+		
+		
+		<script type="text/javascript">
+			var dom = document.getElementById("chart4");
+			var myChart = echarts.init(dom);
+			var app = {};
+			option = null;
+			var base = +new Date(1968, 9, 3);
+			var oneDay = 24 * 3600 * 1000;
+			var date = [];
+			var data = [];
+			
+			 
+			    date.push("2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020");
+			    data.push(0,8,13,20,30,43,40,34,153,245,170,173,119,124,149,122,105,100,96,94);
+			
+			
+			option = {
+			    tooltip: {
+			        trigger: 'axis',
+			        position: function (pt) {
+			            return [pt[0], '10%'];
+			        }
+			    },
+			    title: {
+			        left: 'center',
+			        text: 'New Papers Per Year',
+			    },
+			    toolbox: {
+			        feature: {
+			            dataZoom: {
+			                yAxisIndex: 'none'
+			            },
+			            restore: {},
+			            saveAsImage: {}
+			        }
+			    },
+			    xAxis: {
+			        type: 'category',
+			        boundaryGap: false,
+			        data: date
+			    },
+			    yAxis: {
+			        type: 'value',
+			        boundaryGap: [0, '100%']
+			    },
+			    dataZoom: [{
+			        type: 'inside',
+			        start: 0,
+			        end: 100
+			    }, {
+			        start: 0,
+			        end: 10,
+			        handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+			        handleSize: '80%',
+			        handleStyle: {
+			            color: '#fff',
+			            shadowBlur: 3,
+			            shadowColor: 'rgba(0, 0, 0, 0.6)',
+			            shadowOffsetX: 2,
+			            shadowOffsetY: 2
+			        }
+			    }],
+			    series: [
+			        {
+			            name: 'Number of New Author',
+			            type: 'line',
+			            smooth: true,
+			            symbol: 'none',
+			            sampling: 'average',
+			            itemStyle: {
+			                color: '#b9721b'
+			            },
+			            areaStyle: {
+			                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+			                    offset: 0,
+			                    color: '#d45211'
+			                }, {
+			                    offset: 1,
+			                    color: '#f1f35d'
+			                }])
+			            },
+			            data: data
+			        }
+			    ]
+			};
+			;
+			if (option && typeof option === "object") {
+			    myChart.setOption(option, true);
+			}
+			</script>
+		
+
+	<script type="text/javascript">
+	var dom = document.getElementById("main");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	var xAxisData = [];
+	var data1 = [];
+	var data2 = [];
+	
+	    data1.push(0,25,30,51,95,100,50,180,153,245,170,173,119,124,149,122,105,100,96,94);
+	    data2.push(0,25,30,51,95,100,50,180,153,245,170,173,119,124,149,122,105,100,96,94);
+	
+	
+	option = {
+	    title: {
+	        text: 'Comparison'
+	    },
+	    legend: {
+	        data: ['bar', 'bar2']
+	    },
+		color:[ '#61a0a8', '#f0df1a'],
+	    toolbox: {
+	         y: 'bottom',
+	        feature: {
+	            magicType: {
+	                type: ['stack', 'tiled']
+	            },
+	            dataView: {},
+	            saveAsImage: {
+	                pixelRatio: 2
+	            }
+	        }
+	    },
+	    tooltip: {},
+	    xAxis: {
+	        data: xAxisData,
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    yAxis: {
+	    },
+	    series: [{
+	        name: 'Author1',
+	        type: 'bar',
+	        data: data1,
+	        animationDelay: function (idx) {
+	            return idx * 10;
+	        }
+	    }, {
+	        name: 'Author2',
+	        type: 'bar',
+	        data: data2,
+	        animationDelay: function (idx) {
+	            return idx * 10 + 100;
+	        }
+	    }],
+	    animationEasing: 'elasticOut',
+	    animationDelayUpdate: function (idx) {
+	        return idx * 5;
+	    }
+	};;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}
+	</script>
+		 <!--script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script-->
+		       <!--script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script-->
+		<script type="text/javascript">
+			$.ajaxSetup({ async: false });
+			var chart = echarts.init(document.getElementById('chart2'));
+			var hours = ['2000', '2001', '2002', '2003', '2004', '2005', '2006',
+			        '2007', '2008', '2009','2010','2011',
+			        '2012', '2013', '2014', '2015', '2016', '2017',
+			        '2018', '2019', '2020'];
+			var days = ['Author1', 'Author2', 'Author3',
+			        'Author4', 'Author5', 'Author6'];
+			
+			var data = [[0,0,5],[0,1,1],[0,2,0],[0,3,0],[0,4,0],[0,5,0],[0,6,0],[0,7,0],[0,8,0],[0,9,0],[0,10,0],[0,11,2],[0,12,4],[0,13,1],[0,14,1],[0,15,3],[0,16,4],[0,17,6],[0,18,4],[0,19,4],[0,20,3],[0,21,3],[0,22,2],[0,23,5],[1,0,7],[1,1,0],[1,2,0],[1,3,0],[1,4,0],[1,5,0],[1,6,0],[1,7,0],[1,8,0],[1,9,0],[1,10,5],[1,11,2],[1,12,2],[1,13,6],[1,14,9],[1,15,11],[1,16,6],[1,17,7],[1,18,8],[1,19,12],[1,20,5],[1,21,5],[1,22,7],[1,23,2],[2,0,1],[2,1,1],[2,2,0],[2,3,0],[2,4,0],[2,5,0],[2,6,0],[2,7,0],[2,8,0],[2,9,0],[2,10,3],[2,11,2],[2,12,1],[2,13,9],[2,14,8],[2,15,10],[2,16,6],[2,17,5],[2,18,5],[2,19,5],[2,20,7],[2,21,4],[2,22,2],[2,23,4],[3,0,7],[3,1,3],[3,2,0],[3,3,0],[3,4,0],[3,5,0],[3,6,0],[3,7,0],[3,8,1],[3,9,0],[3,10,5],[3,11,4],[3,12,7],[3,13,14],[3,14,13],[3,15,12],[3,16,9],[3,17,5],[3,18,5],[3,19,10],[3,20,6],[3,21,4],[3,22,4],[3,23,1],[4,0,1],[4,1,3],[4,2,0],[4,3,0],[4,4,0],[4,5,1],[4,6,0],[4,7,0],[4,8,0],[4,9,2],[4,10,4],[4,11,4],[4,12,2],[4,13,4],[4,14,4],[4,15,14],[4,16,12],[4,17,1],[4,18,8],[4,19,5],[4,20,3],[4,21,7],[4,22,3],[4,23,0],[5,0,2],[5,1,1],[5,2,0],[5,3,3],[5,4,0],[5,5,0],[5,6,0],[5,7,0],[5,8,2],[5,9,0],[5,10,4],[5,11,1],[5,12,5],[5,13,10],[5,14,5],[5,15,7],[5,16,11],[5,17,6],[5,18,0],[5,19,5],[5,20,3],[5,21,4],[5,22,2],[5,23,0],[6,0,1],[6,1,0],[6,2,0],[6,3,0],[6,4,0],[6,5,0],[6,6,0],[6,7,0],[6,8,0],[6,9,0],[6,10,1],[6,11,0],[6,12,2],[6,13,1],[6,14,3],[6,15,4],[6,16,0],[6,17,0],[6,18,0],[6,19,0],[6,20,1],[6,21,2],[6,22,2],[6,23,6]];
+			data = data.map(function (item) {
+			    return [item[1], item[0], item[2]];
+			});
+			
+			option = {
+			    title: {
+			        text: 'Author Lifeline'
+			    },
+			    legend: {
+			        data: ['Paper']
+			    },
+			    tooltip: {
+			        position: 'top',
+			        formatter: function (params) {
+			            return params.value[2] + ' publications in ' + hours[params.value[0]] + ' of ' + days[params.value[1]];
+			        }
+			    },
+			    grid: {
+			        left: 2,
+			        bottom: 10,
+			        right: 10,
+			        containLabel: true
+			    },
+			    xAxis: {
+			        type: 'category',
+			        data: hours,
+			        boundaryGap: false,
+			        splitLine: {
+			            show: true,
+			            lineStyle: {
+			                color: '#999',
+			                type: 'dashed'
+			            }
+			        },
+			        axisLine: {
+			            show: false
+			        }
+			    },
+			    yAxis: {
+			        type: 'category',
+			        data: days,
+			        axisLine: {
+			            show: false
+			        }
+			    },
+				itemStyle:{
+					color: '#7b00b9'
+				},
+			    series: [{
+			        name: 'Paper',
+			        type: 'scatter',
+			        symbolSize: function (val) {
+			            return val[2] * 2;
+			        },
+			        data: data,
+			        animationDelay: function (idx) {
+			            return idx * 5;
+			        }
+			    }]
+			};
+			chart.setOption(option)
+		</script>
+		
+		
+		
+		
+		
+		
+		<script>
+					$.ajaxSetup({ async: false });
+		            var chart = echarts.init(document.getElementById('chart5'));
+					var rela = { "data": [], "links":[]};
+					$.getJSON('./data/cloud-author.json', function (json) {
+					    rela = json;
+					});
+					console.log(rela)
+					
+		            var option = {
+		    tooltip: {
+		        trigger: 'axis',
+		        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+		            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+		        }
+		    },
+		    legend: {
+		        data: ['others','Routing','NoC for SiP','NoC for different applications','router design','Design space Exploration','NoC for memory','topology','emerge technology','flow control','add'
+		
+		]
+		    },
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '3%',
+		        containLabel: true
+		    },
+		    xAxis: {
+		        type: 'value'
+		    },
+		    yAxis: {
+		        type: 'category',
+		        data: ['2015','2016','2017','2018','2019']
+		    },
+		    series: [
+		        {
+		            name: 'others',
+		            type: 'bar',
+		            stack: '总量',
+		            label: {
+		                show: true,
+		                position: 'insideRight'
+		            },
+		            data: [74,89,61,48,37]
+		        },
+		        {
+		            name: 'Routing',
+		            type: 'bar',
+		            stack: '总量',
+		            label: {
+		                show: true,
+		                position: 'insideRight'
+		            },
+		            data: [6,5,5,12,18]
+		        },
+		        {
+		            name: 'NoC for SiP',
+		            type: 'bar',
+		            stack: '总量',
+		            label: {
+		                show: true,
+		                position: 'insideRight'
+		            },
+		            data: [0,0,2,5,17]
+		        },
+		        {
+		            name: 'NoC for different applications',
+		            type: 'bar',
+		            stack: '总量',
+		            label: {
+		                show: true,
+		                position: 'insideRight'
+		            },
+		            data: [6,14,8,7,11]
+		        },
+		        {
+		            name: 'router design',
+		            type: 'bar',
+		            stack: '总量',
+		            label: {
+		                show: true,
+		                position: 'insideRight'
+		            },
+		            data: [4,7,4,8,8]
+		        },
+		        {
+		            name: 'Design space Exploration',
+		            type: 'bar',
+		            stack: '总量',
+		            label: {
+		                show: true,
+		                position: 'insideRight'
+		            },
+		            data: [0,6,2,5,6]
+		        },
+		        {
+		            name: 'NoC for memory',
+		            type: 'bar',
+		            stack: '总量',
+		            label: {
+		                show: true,
+		                position: 'insideRight'
+		            },
+		            data: [23,8,5,9,7]
+		        },
+		        {
+		            name: 'topology',
+		            type: 'bar',
+		            stack: '总量',
+		            label: {
+		                show: true,
+		                position: 'insideRight'
+		            },
+		            data: [30,15,17,1,9]
+		        },
+		        {
+		            name: 'emerge technology',
+		            type: 'bar',
+		            stack: '总量',
+		            label: {
+		                show: true,
+		                position: 'insideRight'
+		            },
+		            data: [21,15,23,11,10]
+		        },
+		        {
+		            name: 'flow control',
+		            type: 'bar',
+		            stack: '总量',
+		            label: {
+		                show: true,
+		                position: 'insideRight'
+		            },
+		            data: [24,16,13,13,8]
+		        }
+		    ]
+		};
+		
+		            chart.setOption(option);
+		        </script>
+				
+
+			   	<script type="text/javascript">
+			   	var dom = document.getElementById("container2");
+			   	var myChart = echarts.init(dom);
+			   	var app = {};
+			   	option = null;
+			   	var xAxisData = [];
+			   	var data1 = [];
+			   	var data2 = [];
+			   	for (var i = 1; i <= 20; i++) {
+			   	    xAxisData.push('200' + i);
+			   	   // data1.push((Math.sin(i / 5) * (i / 5 -10) + i / 6) * 5);
+			   	    //data2.push((Math.cos(i / 5) * (i / 5 -10) + i / 6) * 5);
+			   	}
+				data1.push(0,25,30,51,95,100,50,180,153,245,170,173,119,124,149,122,105,100,96,94);
+				data2.push(0,25,30,51,95,100,50,180,153,245,170,173,119,124,149,122,105,100,96,94);
+					
+					
+			   	
+			   	option = {
+			   	    title: {
+						left:"center",
+			   	        text: 'Papers in 2 Subjects '
+			   	    },
+			   	    legend: {
+			   	        data: ['bar', 'bar2']
+			   	    },
+			   	    toolbox: {
+			   	        // y: 'bottom',
+			   	        feature: {
+			   	            magicType: {
+			   	                type: ['stack', 'tiled']
+			   	            },
+			   	            dataView: {},
+			   	            saveAsImage: {
+			   	                pixelRatio: 2
+			   	            }
+			   	        }
+			   	    },
+			   	    tooltip: {},
+			   	    xAxis: {
+			   	        data: xAxisData,
+			   	        splitLine: {
+			   	            show: false
+			   	        }
+			   	    },
+			   	    yAxis: {
+			   	    },
+			   	    series: [{
+			   	        name: 'subject1',
+			   	        type: 'bar',
+			   	        data: data1,
+			   	        animationDelay: function (idx) {
+			   	            return idx * 10;
+			   	        }
+			   	    }, {
+			   	        name: 'subject2',
+			   	        type: 'bar',
+			   	        data: data2,
+			   	        animationDelay: function (idx) {
+			   	            return idx * 10 + 100;
+			   	        }
+			   	    }],
+			   	    animationEasing: 'elasticOut',
+			   	    animationDelayUpdate: function (idx) {
+			   	        return idx * 5;
+			   	    }
+			   	};;
+			   	if (option && typeof option === "object") {
+			   	    myChart.setOption(option, true);
+			   	}
+			   	       </script>
+				
+							
+
+			
+				       
+					   
+			   </div>
+                <!--===================================================-->
+                <!--End page content-->
+
+
+
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+		<script src="js/try.js"></script>
+
+
+        </div>
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer">
+           <p class="pad-lft">Copyright&#0169; 2020 科学学可视化  &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;All Rights Reserved </p>
+        </footer>
+
+        <!--===================================================-->
+        <!-- END FOOTER -->
+        <!-- SCROLL PAGE BUTTON -->
+        <!--===================================================-->
+        <button class="scroll-top btn">
+            <i class="pci-chevron chevron-up"></i>
+        </button>
+        <!--===================================================-->
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+	
+
+ 
+</script>
+</body>
+</html>

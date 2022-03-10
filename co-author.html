@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Science of Science</title>
+		
+		<link href = "./css/bootstrap.min.css" rel = "stylesheet">
+		<link rel="shortcut icon" href="img/logo.png" >
+		<link href="./css/nifty.min.css" rel="stylesheet">
+		
+		<!--Nifty Premium Icon [ DEMONSTRATION ]-->
+		<link href="./css/nifty-demo-icons.min.css" rel="stylesheet">
+		
+		<!--Demo [ DEMONSTRATION ]-->
+		<link href="./css/nifty-demo-icons.min.css" rel="stylesheet">
+		<link href="./css/nifty-demo.min.css" rel="stylesheet">
+		<link href="./css/font-awesome.min.css" rel="stylesheet">
+		
+		
+		<!--JAVASCRIPT-->
+		<!--=================================================-->
+		
+		<!--Pace - Page Load Progress Par [OPTIONAL]-->
+		<link href="./css/pace.min.css" rel="stylesheet">
+		   
+		<script src="./js/pace.min.js"></script>
+		   
+		
+		
+		<!--jQuery [ REQUIRED ]-->
+		<script src="./js/jquery-2.2.4.min.js"></script>
+		
+		
+		<!--BootstrapJS [ RECOMMENDED ]-->
+		<script src="./js/bootstrap.min.js"></script>
+		
+		
+		<!--NiftyJS [ RECOMMENDED ]-->
+		<script src="./js/nifty.min.js"></script>
+		<script src="./js/icons.js"></script>
+		
+		
+		<script src="./js/echarts.min.js"></script>
+		
+		
+		<!--=================================================-->
+		
+		<!--Demo script [ DEMONSTRATION ]-->
+		<script src="./js/nifty-demo.min.js"></script>   
+		   
+	</head>
+
+<body>
+        <!--NAVBAR-->
+        <!--===================================================-->
+        <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="./index.html" class="navbar-brand">
+                        <img src="./img/logo.png" alt="Nifty Logo" class="brand-icon">
+                        <div class="brand-title">
+                            <span class="brand-text">HOME</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="demo-pli-view-list"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+					
+                    <ul class="nav navbar-top-links pull-left">
+                        <h4> Data Visualization based on Science of Science </h4>
+                    </ul>
+					
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+        
+  	<script src="js/try.js"></script>
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                <div id="page-content">
+				
+				
+
+				<div style="display:flex;justify-content:space-between;align-items:center;">
+                    <h2 class="text-main pad-btm bord-btm">Co-Author Network</h2>
+					
+				
+					<a href="degree co-author.html">
+						<button type="button" class="btn btn-info" style="margin-left: 1200px;height: 50px;font-size:large">
+						The degree of distribution</button>
+					</a>
+				
+				<a href="info_author.html">
+					<button type="button" class="btn btn-info" style="height: 50px;font-size:large;margin-right: 50px;">
+					Author Information
+					</button>
+				</a>
+
+					</div>
+					
+					
+					
+              
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
+                    
+				<div style="display:flex;justify-content:space-between;align-items:center;">
+				<h3 class="text-main pad-btm bord-btm">In the citation network, which is a directed network, each node is a paper.
+				 <p>If paper A cites paper B, there is a link from A to B.</p><p> Each node weight corresponds to the number of being cited for each paper, and the link weights are 1. </h3>
+				</p>
+				</div>
+				
+				<div class="row" style="height: 1600px;" id="co-author">
+				
+				    <script type="text/javascript">
+				        window.onresize = function () {
+				            myChart.resize();
+				        }
+						//ajax同步请求
+				        $.ajaxSetup({ async: false });
+				        var myChart = echarts.init(document.getElementById("co-author"));
+				       // myChart.showLoading();
+				        var rela = { "data": [], "links": [] };
+						
+				        $.getJSON('./data/co-author2.json', function (json) {
+				            rela = json;
+				        });
+						
+						
+			option = {
+				            // backgroundColor: "white",
+				            title: {
+				                text: '合作者网络',
+				                textStyle: {
+				                    // color: "white",
+				                    fontWeight: "lighter",
+				                }
+				            },
+							backgroundColor:"#000",
+							color:['#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3','#c23531','#2f4554', '#61a0a8', '#d48265'],
+				            animationDurationUpdate: 1500,
+				            animationEasingUpdate: 'quinticInOut',
+				            legend: {
+				                //x: "center",
+				                show: true,
+				                 //data: ["贾家荣国府", "贾家宁国府", "王家", "史家", "薛家", "其他", "林家"]
+							},
+							tooltip: {
+							},
+				            series: [
+				                {
+				                    type: 'graph',
+									layout:"force",
+				                    //layout: 'circular',
+				                    symbolSize: 25,
+				                    edgeSymbol: ['circle', 'arrow'],
+				                    edgeSymbolSize: [4, 4],
+									itemStyle:{
+										borderColor:"#fff",
+										borderWidth:1,
+										shadowBlur: 10,
+										shadowColor:"rgba(0,0,0,0.2)"
+									},
+				                    edgeLabel: {
+				                        normal: {
+				                            show: true,
+				                            textStyle: {
+				                                fontSize: 10
+				                            },
+				                            formatter: "{c}"
+				                        }
+				                    },
+	
+				                    focusNodeAdjacency: true,
+				                    //draggable: true,
+				                    roam: false,
+				                    categories: [
+									{
+										name:'0'
+									},
+									{
+										name:'1'
+									},
+									{
+										name:'2'
+									},
+									{
+										name:'3'
+									},
+									{
+										name:'4'
+									},
+									{
+										name:'5'
+									}
+				                    ],
+				                    label: {
+										position: 'right',
+										formatter: '{b}',
+				                        normal: {
+				                            show: true,
+				                            textStyle: {
+				                                fontSize: 12
+				                            },
+				                        }
+				                    },
+				         force: {
+				         	//layoutAnimation: false,
+				             repulsion: 1000,
+				             edgeLength: [10, 100]
+				         },
+									draggable: true,
+				                    lineStyle: {
+				                        normal: {
+				                            opacity: 0.5,
+				                            width: 1
+				                        }
+				                    },
+				                    // progressiveThreshold: 700,
+				                    nodes: rela.data.map(function (node, idx) {
+				                        node.id = idx;
+				                        return node;
+				                    }),
+									nodes: rela.data,
+				                    links: rela.links,
+									emphasis: {
+									    lineStyle: {
+									        width: 100
+										}
+									}
+				                }
+				            ]
+				        };
+				        myChart.setOption(option, true);
+				    </script>
+				
+				</div>
+				    
+			<!--===================================================-->        
+			
+   
+  
+                    </div>
+					
+					
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
+
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+            
+		<script src="js/try.js"></script>
+        </div>
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+
+        <!--===================================================-->
+        <!-- END FOOTER -->
+        <!-- SCROLL PAGE BUTTON -->
+        <!--===================================================-->
+        <button class="scroll-top btn">
+            <i class="pci-chevron chevron-up"></i>
+        </button>
+        <!--===================================================-->
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+	
+
+ 
+</script>
+</body>
+</html>

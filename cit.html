@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Science of Science</title>
+		
+		<link href = "./css/bootstrap.min.css" rel = "stylesheet">
+		<link rel="shortcut icon" href="img/logo.png" >
+		<link href="./css/nifty.min.css" rel="stylesheet">
+		
+		<!--Nifty Premium Icon [ DEMONSTRATION ]-->
+		<link href="./css/nifty-demo-icons.min.css" rel="stylesheet">
+		
+		<!--Demo [ DEMONSTRATION ]-->
+		<link href="./css/nifty-demo-icons.min.css" rel="stylesheet">
+		<link href="./css/nifty-demo.min.css" rel="stylesheet">
+		<link href="./css/font-awesome.min.css" rel="stylesheet">
+		
+		
+		<!--JAVASCRIPT-->
+		<!--=================================================-->
+		
+		<!--Pace - Page Load Progress Par [OPTIONAL]-->
+		<link href="./css/pace.min.css" rel="stylesheet">
+		   
+		<script src="./js/pace.min.js"></script>
+		   
+		
+		
+		<!--jQuery [ REQUIRED ]-->
+		<script src="./js/jquery-2.2.4.min.js"></script>
+		
+		
+		<!--BootstrapJS [ RECOMMENDED ]-->
+		<script src="./js/bootstrap.min.js"></script>
+		
+		
+		<!--NiftyJS [ RECOMMENDED ]-->
+		<script src="./js/nifty.min.js"></script>
+		<script src="./js/icons.js"></script>
+		
+		
+		<script src="./js/echarts.min.js"></script>
+		
+		
+		<!--=================================================-->
+		
+		<!--Demo script [ DEMONSTRATION ]-->
+		<script src="./js/nifty-demo.min.js"></script>   
+		
+			<style type="text/css">
+				/* 标签选择器 */
+				p {
+				    text-align: center;
+				    font-size: 25px;
+				    color: cadetblue;
+				    font-family: fantasy;
+				}
+				
+				/* id选择器 */
+				#hr1 {
+				    background-color: cadetblue;
+				    height: 2px;
+				    width: 75%;
+				}
+				
+				/* 类选择器 */
+				.imgbox {
+				    border-top: 5px solid cadetblue;
+				    /* 避免因窗口变化影响图片效果 */
+				    width: 60%;
+				    height: 40%;
+				    margin: 0 auto;
+				}
+				
+				.img {
+				    width: 60%;
+				    height: 40%;
+				    margin: 0 auto;
+				    display: none;
+				}
+			</style>
+	</head>
+
+<body>
+
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+        
+        <!--NAVBAR-->
+        <!--===================================================-->
+        <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="./index.html" class="navbar-brand">
+                        <img src="./img/logo.png" alt="Nifty Logo" class="brand-icon">
+                        <div class="brand-title">
+                            <span class="brand-text">HOME</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="demo-pli-view-list"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+					
+                    <ul class="nav navbar-top-links pull-left">
+                        <h4>Data Visualization based on Science of Science</h4>
+                    </ul>
+					
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+
+
+
+
+        <div class="boxed">
+				
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+
+
+
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content" >
+					
+					      <p>测试轮播图</p>
+					        <hr id="hr1"/>
+					        <!-- 建立一个div控件作为图片框 -->
+					        <div class="imgBox">
+					            <!-- alt：图片路径失败时替换显示内容 -->
+					            <img class="img-slide img" src="./img/degree.png" alt="img1">
+					            <img class="img-slide img" src="img/loading.gif" alt="img2">
+					            <img class="img-slide img" src="img/img3.jpg" alt="img3">
+					            <img class="img-slide img" src="img/img4.jpg" alt="img4">
+					            <img class="img-slide img" src="img/img5.jpg" alt="img5">
+					        </div>
+					
+					
+					 <script type="text/javascript">
+					        // index：索引， len：长度
+					        var index = 0, len;
+					        // 类似获取一个元素数组
+					        var imgBox = document.getElementsByClassName("img-slide");
+					        len = imgBox.length;
+					        imgBox[index].style.display = 'block';
+					        // 逻辑控制函数
+					        function slideShow() {
+					            index ++;
+					            // 防止数组溢出
+					            if(index >= len) index = 0;
+					            // 遍历每一个元素
+					            for(var i=0; i<len; i++) {
+					                imgBox[i].style.display = 'none';
+					            }
+					            // 每次只有一张图片显示
+					            imgBox[index].style.display = 'block';
+					        }
+					        
+					        // 定时器，间隔3s切换图片
+					        setInterval(slideShow, 30000);
+					        
+					    </script>
+					    
+					</html>
+					
+					
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+					<h2 class="text-main pad-btm bord-btm">Citation Network</h2><a href="degree citation.html"><button type="button" class="btn btn-info" style="margin-right: 50px;height: 50px;font-size:large">The degree of distribution</button></a>
+					</div>
+              
+				<div style="display:flex;justify-content:space-between;align-items:center;">
+				<h3 class="text-main pad-btm bord-btm">In the citation network, which is a directed network, each node is a paper.
+				 <p>If paper A cites paper B, there is a link from A to B.</p><p> Each node weight corresponds to the number of being cited for each paper, and the link weights are 1. </h3>
+				</p>
+				</div>
+	
+			<!-- div style="display: flex;flex-direction: row;">
+			 <!--===================================================--> 
+			<div>
+			 <div class="row" style="height: 1000px; width: 1800px; align-self: auto;margin: 50px;" id="guanxi"></div>
+			<hr>
+			 <div class="row" style="height: 1000px; width: 1800px; align-self: auto;margin: 50px;" id="guanxi2"></div>
+			<hr>
+			<div class="row" style="height: 1000px; width: 1800px; align-self: auto; margin: 50px;" id="guanxi3"></div>
+		
+			</div>
+				
+			
+				    <script type="text/javascript">
+				        window.onresize = function () {
+				            myChart.resize();
+				        }
+						
+				        $.ajaxSetup({ async: false });
+						
+						var myChart2 = echarts.init(document.getElementById("guanxi2"));
+										
+				        myChart2.showLoading();
+				        var rela = { "data": [], "links": [] };
+						
+				        $.getJSON('./data/cit_2015.json', function (json) {
+				            rela = json;
+				        });
+						console.log("chart2")
+						console.log(rela.links)
+				        myChart2.hideLoading();
+						
+				        option = {
+							title: {
+							    text: 'Citation Network in 2015',
+							    subtext: 'By ecStat.regression',
+							    //sublink: 'https://github.com/ecomfe/echarts-stat',
+							    left: 'center'
+							},
+				            animationDurationUpdate: 1500,
+				            animationEasingUpdate: 'quinticInOut',
+				            series: [
+				                {
+									
+									tooltip:{},
+				                    type: 'graph',
+				                    layout: 'force',
+				                    symbolSize: 45,
+				                    edgeSymbol: ['circle', 'arrow'],
+				                    edgeSymbolSize: [4, 4],
+				                    edgeLabel: {
+				                        normal: {
+				                            show: true,
+				                            textStyle: {
+				                                fontSize: 10,
+											
+				                            },
+				                            formatter: "{c}"
+				                        }
+				                    },
+
+				                    focusNodeAdjacency: true,
+				                    draggable: true,
+				                    roam: true,
+				                    categories: [
+									{
+										name:'0'
+									},
+									{
+										name:'1'
+									},
+									{
+										name:'2'
+									},
+									{
+										name:'3'
+									},
+									{
+										name:'4'
+									},
+									{
+										name:'5'
+									}
+				                    ],
+				                    label: {
+				                        normal: {
+				                            show: false,
+				                            textStyle: {
+				                                fontSize: 20,
+												color:"black"
+				                            },
+				                        }
+				                    },
+
+									force: {
+								
+									    repulsion: 2500,
+									    edgeLength: [10, 100]
+									},
+				                    lineStyle: {
+				                        normal: {
+				                            opacity: 0.9,
+				                            width: 1,
+				                            curveness: 0.3
+				                        }
+				                    },
+									data:rela.data,
+				                    links: rela.links
+				                }
+				            ]
+				        };
+				       
+						myChart2.setOption(option, true);
+
+				    </script>
+				
+				
+				<script type="text/javascript">
+				    window.onresize = function () {
+				        myChart.resize();
+				    }
+					
+				    $.ajaxSetup({ async: false });
+				    var myChart = echarts.init(document.getElementById("guanxi"));
+					
+									
+				    myChart.showLoading();
+				    var rela = { "data": [], "links": [] };
+				
+					
+				    $.getJSON('./data/cit_2010.json', function (json) {
+				        rela = json;
+				    });
+					console.log("chart1");
+					console.log(rela.links);
+					
+				    myChart.hideLoading();
+					
+				    option = {
+						title: {
+						    text: 'Citation Network in 2010',
+						    subtext: 'By ecStat.regression',
+						    //sublink: 'https://github.com/ecomfe/echarts-stat',
+						    left: 'center'
+						},
+				        animationDurationUpdate: 1500,
+				        animationEasingUpdate: 'quinticInOut',
+				        series: [
+				            {
+								tooltip:{},
+				                type: 'graph',
+				                layout: 'force',
+				                symbolSize: 45,
+				                edgeSymbol: ['circle', 'arrow'],
+				                edgeSymbolSize: [4, 4],
+				                edgeLabel: {
+				                    normal: {
+				                        show: true,
+				                        textStyle: {
+				                            fontSize: 10,
+										
+				                        },
+				                        formatter: "{c}"
+				                    }
+				                },
+				
+				                focusNodeAdjacency: true,
+				                draggable: true,
+				                roam: true,
+				                categories: [
+								{
+									name:'0'
+								},
+								{
+									name:'1'
+								},
+								{
+									name:'2'
+								},
+								{
+									name:'3'
+								},
+								{
+									name:'4'
+								},
+								{
+									name:'5'
+								}
+				                ],
+				                label: {
+				                    normal: {
+				                        show: false,
+				                        textStyle: {
+				                            fontSize: 20,
+											color:"black"
+				                        },
+				                    }
+				                },
+				
+								force: {
+								    repulsion: 2500,
+								    edgeLength: [10, 100]
+								},
+				                lineStyle: {
+				                    normal: {
+				                        opacity: 0.9,
+				                        width: 1,
+				                        curveness: 0.3
+				                    }
+				                },
+								data:rela.data,
+				                links: rela.links,
+				            }
+				        ]
+				    };
+				    myChart.setOption(option, true);
+
+				</script>
+				
+			
+				    
+			<!--===================================================-->        
+			   <script type="text/javascript">
+			       window.onresize = function () {
+			           myChart.resize();
+			       }
+			   	
+			       $.ajaxSetup({ async: false });
+			   	
+			   	var myChart3 = echarts.init(document.getElementById("guanxi3"));
+			   					
+			       myChart3.showLoading();
+			       var rela = { "data": [], "links": [] };
+			   	
+			       $.getJSON('./data/cit_2020.json', function (json) {
+			           rela = json;
+			       });
+			   	console.log("chart2")
+			   	console.log(rela.links)
+			    myChart3.hideLoading();
+			   	
+			       option = {
+					   title: {
+					       text: 'Citation Network in 2020',
+					       subtext: 'By ecStat.regression',
+					       //sublink: 'https://github.com/ecomfe/echarts-stat',
+					       left: 'center'
+					   },
+			           animationDurationUpdate: 1500,
+			           animationEasingUpdate: 'quinticInOut',
+			           series: [
+			               {
+			   				tooltip:{},
+			                   type: 'graph',
+			                   layout: 'force',
+			                   symbolSize: 45,
+			                   edgeSymbol: ['circle', 'arrow'],
+			                   edgeSymbolSize: [4, 4],
+			                   edgeLabel: {
+			                       normal: {
+			                           show: true,
+			                           textStyle: {
+			                               fontSize: 10,
+			   						
+			                           },
+			                           formatter: "{c}"
+			                       }
+			                   },
+			   
+			                   focusNodeAdjacency: true,
+			                   draggable: true,
+			                   roam: true,
+			                   categories: [
+			   				{
+			   					name:'0'
+			   				},
+			   				{
+			   					name:'1'
+			   				},
+			   				{
+			   					name:'2'
+			   				},
+			   				{
+			   					name:'3'
+			   				},
+			   				{
+			   					name:'4'
+			   				},
+			   				{
+			   					name:'5'
+			   				}
+			                   ],
+			                   label: {
+			                       normal: {
+			                           show: false,
+			                           textStyle: {
+			                               fontSize: 20,
+			   							color:"black"
+			                           },
+			                       }
+			                   },
+			   
+			   				force: {
+			   			
+			   				    repulsion: 2500,
+			   				    edgeLength: [10, 100]
+			   				},
+			                   lineStyle: {
+			                       normal: {
+			                           opacity: 0.9,
+			                           width: 1,
+			                           curveness: 0.3
+			                       }
+			                   },
+			   				data:rela.data,
+			                   links: rela.links
+			               }
+			           ]
+			       };
+			      
+			   	myChart3.setOption(option, true);
+			   
+			   </script>
+			   				
+			   
+			   
+
+                   
+                     
+					
+					
+
+                <!--===================================================-->
+                <!--End page content-->
+
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+            
+		<script src="js/try.js"></script>
+
+        </div>
+		</div>
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer">
+           <p class="pad-lft">Copyright&#0169; 2020 科学学可视化  &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;All Rights Reserved </p>
+        </footer>
+
+        <!--===================================================-->
+        <!-- END FOOTER -->
+        <!-- SCROLL PAGE BUTTON -->
+        <!--===================================================-->
+        <button class="scroll-top btn">
+            <i class="pci-chevron chevron-up"></i>
+        </button>
+        <!--===================================================-->
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+
+</script>
+</body>
+</html>

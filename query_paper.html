@@ -1,0 +1,273 @@
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Science of Science</title>
+		
+		<link href = "./css/bootstrap.min.css" rel = "stylesheet">
+		<link rel="shortcut icon" href="img/logo.png" >
+		<link href="./css/nifty.min.css" rel="stylesheet">
+		
+		<!--Nifty Premium Icon [ DEMONSTRATION ]-->
+		<link href="./css/nifty-demo-icons.min.css" rel="stylesheet">
+		
+		<!--Demo [ DEMONSTRATION ]-->
+		<link href="./css/nifty-demo-icons.min.css" rel="stylesheet">
+		<link href="./css/nifty-demo.min.css" rel="stylesheet">
+		<link href="./css/font-awesome.min.css" rel="stylesheet">
+		
+		
+		<!--JAVASCRIPT-->
+		<!--=================================================-->
+		
+		<!--Pace - Page Load Progress Par [OPTIONAL]-->
+		<link href="./css/pace.min.css" rel="stylesheet">
+		   
+		<script src="./js/pace.min.js"></script>
+		   
+		
+		
+		<!--jQuery [ REQUIRED ]-->
+		<script src="./js/jquery-2.2.4.min.js"></script>
+		
+		
+		<!--BootstrapJS [ RECOMMENDED ]-->
+		<script src="./js/bootstrap.min.js"></script>
+		
+		
+		<!--NiftyJS [ RECOMMENDED ]-->
+		<script src="./js/nifty.min.js"></script>
+		<script src="./js/icons.js"></script>
+		
+		
+		<script src="./js/echarts.min.js"></script>
+		<script src='https://cdn.bootcss.com/echarts/3.7.0/echarts.simple.js'></script>
+		<script src="js/echarts-wordcloud.js"></script>
+		
+		<!--=================================================-->
+		
+		<!--Demo script [ DEMONSTRATION ]-->
+		<script src="./js/nifty-demo.min.js"></script>   
+		
+		
+		   
+	</head>
+
+<body>
+   <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="./index.html" class="navbar-brand">
+                        <img src="./img/logo.png" alt="Nifty Logo" class="brand-icon">
+                        <div class="brand-title">
+                            <span class="brand-text">HOME</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="demo-pli-view-list"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+					
+                    <ul class="nav navbar-top-links pull-left">
+                        <h4> Data Visualization based on Science of Science </h4>
+                    </ul>
+					
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>
+		
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+        
+	<script src="js/try.js"></script>
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                <!--Page content-->
+				<h2 class="text-main pad-btm bord-btm">&nbsp; Search Papers</h2>
+                <!--===================================================-->
+                <div id="page-content">
+                    
+				
+			<script type="text/javascript">
+				function search() {	 
+					 var key_word = document.getElementById('search').value;
+					 console.log(key_word);
+				
+					$.ajaxSetup({ async: false });
+					var search_data = {};
+					
+					$.getJSON('./data/authors.json', function (json) {
+					    search_data = json;
+					});
+
+					var search_text = document.getElementById("search_text");
+					
+					console.log("data is: ");
+					//console.log(search_data.data);
+					console.log(search_data[0].name);
+						
+					var f = 0;
+					var d = "";
+					
+					for(var i in search_data){						
+						if(key_word == search_data[i].name){
+							alert("Found the author " + search_data[i].name);
+							f= 1;
+							d = "<strong> Author Name: " + search_data[i].name + "</strong><br>";
+							d += "<strong> Author id: " + search_data[i]._id + "</strong><br>";
+							d += "<strong>  Department Name: " + search_data[i].dblp_name + "</strong><br>";
+							d += "<strong> Current_affiliation : " + search_data[i].current_affiliation + "</strong><br>";
+							console.log("d = " + d);
+							
+							$('.mydiv').append(d);
+							break;
+						}
+						//console.log(search_data.data[i].name);
+					}
+					
+				     //   option.series[0].nodes = json.data.map(function (node, idx) {
+				     //       node.id = idx;
+				      //      return node;
+				       3// });
+			//	        option.series[0].links = json.links;
+				
+		//		        myChart.setOption(option, true);
+				
+				
+				}
+			</script>
+			
+            <div class="row" style="height: 60px">
+                	<h3>  &nbsp; &nbsp; Paper WordCloud </h3>
+            </div>
+			
+			<div id="main" style="width: 1850px; height:800px;" align="center"></div>
+		
+				
+	<div style="align-items:center; background-color: #dadada; margin-top: 50px; margin-left: 250px; margin-right: 250px;" >
+	    <div class="input-group" style="align-content: center;">
+	        <input type="text" id="search" class="form-control input-lg"  placeholder="Input the name you want..."  style="margin: 5px;" >
+	           <span class="input-group-addon btn btn-mint"  onclick="search()" >Search</span>
+	    </div>
+	</div>
+		
+	<div class="row" style="height: 600px">
+	 			<h3> &nbsp; &nbsp; Search Result</h3>
+				<div class ="mydiv" style="height: 500px;" id="search_text">
+					<text style="font-size: 20px;"> &nbsp; &nbsp; &nbsp;</text>
+				</div>
+	 </div>
+			    
+	</div>
+			
+						
+        <script>
+			$.ajaxSetup({ async: false });
+            var chart = echarts.init(document.getElementById('main'));
+			var rela = { "data": [], "links":[]};
+			$.getJSON('./data/cloud-paper.json', function (json) {
+			    rela = json;
+			});
+			console.log(rela)
+			
+            var option = {
+                tooltip: {},
+                series: [ {
+                    type: 'wordCloud',
+                    gridSize: 2,
+                    sizeRange: [22, 50],
+                    rotationRange: [-90, 90],
+                    shape: 'pentagon',
+                    width: 800,
+                    height: 600,
+                    drawOutOfBound: true,
+                    textStyle: {
+                        normal: {
+                            color: function () {
+                                return 'rgb(' + [
+                                    Math.round(Math.random() * 160),
+                                    Math.round(Math.random() * 160),
+                                    Math.round(Math.random() * 160)
+                                ].join(',') + ')';
+                            }
+                        },
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowColor: '#333'
+                        }
+                    },
+                    data: rela.data
+                } ]
+            };
+
+            chart.setOption(option);
+        </script>
+		
+		 
+		  
+			   </div>
+			   	
+				
+
+                <!--===================================================-->
+                <!--End page content-->
+
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+            
+		<script src="js/try.js"></script>
+
+        </div>
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+ 
+
+        <!--===================================================-->
+        <!-- END FOOTER -->
+        <!-- SCROLL PAGE BUTTON -->
+        <!--===================================================-->
+        <button class="scroll-top btn">
+            <i class="pci-chevron chevron-up"></i>
+        </button>
+        <!--===================================================-->
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+	
+
+ 
+</script>
+</body>
+</html>

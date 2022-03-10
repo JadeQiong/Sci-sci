@@ -1,0 +1,9 @@
+{"data": 
+[{"name": "CS", "category": "1"},
+ {"name": "Routing", "category": "2"}
+ ],
+"links":[
+{"source": "CS", "target": "Routing", "value": "10"},
+{"name": 666 , "source": "Routing", "target": "CS", "value":"ABAABA"}
+]
+}

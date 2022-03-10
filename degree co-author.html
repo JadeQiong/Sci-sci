@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Science of Science</title>
+		
+		<link href = "./css/bootstrap.min.css" rel = "stylesheet">
+		<link rel="shortcut icon" href="img/logo.png" >
+		<link href="./css/nifty.min.css" rel="stylesheet">
+		
+		<!--Nifty Premium Icon [ DEMONSTRATION ]-->
+		<link href="./css/nifty-demo-icons.min.css" rel="stylesheet">
+		
+		<!--Demo [ DEMONSTRATION ]-->
+		<link href="./css/nifty-demo-icons.min.css" rel="stylesheet">
+		<link href="./css/nifty-demo.min.css" rel="stylesheet">
+		<link href="./css/font-awesome.min.css" rel="stylesheet">
+		
+		
+		<!--JAVASCRIPT-->
+		<!--=================================================-->
+		
+		<!--Pace - Page Load Progress Par [OPTIONAL]-->
+		<link href="./css/pace.min.css" rel="stylesheet">
+		   
+		<script src="./js/pace.min.js"></script>
+		   
+		
+		
+		<!--jQuery [ REQUIRED ]-->
+		<script src="./js/jquery-2.2.4.min.js"></script>
+		
+		
+		<!--BootstrapJS [ RECOMMENDED ]-->
+		<script src="./js/bootstrap.min.js"></script>
+		
+		
+		<!--NiftyJS [ RECOMMENDED ]-->
+		<script src="./js/nifty.min.js"></script>
+		<script src="./js/icons.js"></script>
+		
+		
+		<script src="./js/echarts.min.js"></script>
+		<script src='https://cdn.bootcss.com/echarts/3.7.0/echarts.js'></script>
+		<script src="js/echarts-wordcloud.js"></script>
+		
+		
+		<!--=================================================-->
+        
+		<!--Demo script [ DEMONSTRATION ]-->
+		<script src="./js/nifty-demo.min.js"></script>   
+		 <style type="text/css">
+		 	table th { 
+		 	    text-align: center;
+		 	}
+		 </style>
+	</head>
+
+<body>
+
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+        
+        <!--NAVBAR-->
+        <!--===================================================-->
+        <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="./index.html" class="navbar-brand">
+                        <img src="./img/logo.png" alt="Nifty Logo" class="brand-icon">
+                        <div class="brand-title">
+                            <span class="brand-text">HOME</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="demo-pli-view-list"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+					
+                    <ul class="nav navbar-top-links pull-left">
+                        <h4>Data Visualization based on Science of Science</h4>
+                    </ul>
+					
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>
+		
+        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                <!--Page content-->
+			<!--<h2 class="text-main pad-btm bord-btm">&nbsp; Search Papers111</h2>>
+			
+                <!--===================================================-->
+                <div id="page-content">
+
+<center>
+<table border = "1" style="align-self: center;height: 250px; width: 1050px;text-align: center;">
+	<caption style="text-align: center;"><h3> Characteristics of the Co-authorship network </h3></caption>
+
+
+
+<th>Year</th>
+
+<th>nodes</th>
+
+<th>clustering coefficient</th>
+
+<th>network diameter</th>
+
+<th>average degree</th>
+
+<th>modularity (resolution 1.0)</th>
+
+<th>graph density</th>
+
+
+
+<tr>
+
+
+<td>2010</td>
+<td>2210</td>
+<td>0.885</td>
+<td>13</td>
+<td>1.38</td>
+<td>0,889</td>
+<td>0.001</td>
+
+
+</tr>
+
+<tr>
+
+<td>2015</td>
+<td>2210</td>
+<td>0.875</td>
+<td>18</td>
+<td>2.788</td>
+<td>0.865</td>
+<td>0.002</td>
+
+</tr>
+
+<tr>
+	
+<td>2020</td>
+<td>2210</td>
+<td>0.876</td>
+<td>15</td>
+<td>3.444</td>
+<td>0.918</td>
+<td>0.003</td>
+
+</tr>
+
+</table>
+
+</center>
+<hr>
+
+
+                    <div id="main1" style="width: 1600px;height:800px;margin: auto;"></div>
+				
+				
+                    <script src="./dist/ecStat.js"></script>
+			<script>$.ajaxSetup({
+			    async: false
+			});
+			
+			var chart = echarts.init(document.getElementById('main1'));
+			
+			var dataSH = [[1,0.044776119],
+			[2,0.074626866],
+			[3,0.059701493],
+			[4,0.074626866],
+			[5,0.014925373],
+			[6,0.044776119],
+			[7,0.014925373],
+			[8,0.044776119],
+			[9,0.014925373],
+			[10,0.044776119],
+			[12,0.029850746],
+			[13,0.029850746],
+			[14,0.044776119],
+			[15,0.014925373],
+			[16,0.029850746],
+			[17,0.029850746],
+			[18,0.029850746],
+			[19,0.014925373],
+			[20,0.029850746],
+			[22,0.044776119],
+			[23,0.014925373],
+			[24,0.014925373],
+			[26,0.029850746],
+			[27,0.014925373],
+			[28,0.014925373],
+			[29,0.014925373],
+			[32,0.029850746],
+			[38,0.014925373],
+			[40,0.014925373],
+			[41,0.014925373],
+			[45,0.014925373],
+			[48,0.029850746],
+			[49,0.014925373],
+			[53,0.014925373],
+			[56,0.014925373],
+			[57,0.014925373],
+			[66,0.014925373],
+			[70,0.014925373],
+			[73,0.029850746],
+			[78,0.014925373],
+			[87,0.014925373],
+			[92,0.029850746],
+			[93,0.014925373],
+			[94,0.014925373],
+			[96,0.014925373]
+			];
+			
+			var myRegression = ecStat.regression('exponential', dataSH);
+			var option = {
+			    title: {
+			        text: 'Co-author Network Degree Distribution',
+			        subtext: 'By ecStat.regression',
+			        sublink: 'https://github.com/ecomfe/echarts-stat',
+			        left: 'center'
+			    },
+			    tooltip: {
+			        trigger: 'axis',
+			        axisPointer: {
+			            type: 'cross'
+			        }
+			    },
+			    xAxis: {
+					name:"Number of Degrees",
+			        type: 'value',
+			        splitLine: {
+			            lineStyle: {
+			                type: 'dashed'
+			            }
+			        },
+			        splitNumber: 20
+			    },
+			    yAxis: {
+					name:"Percentage(%)",
+			        type: 'value',
+			        splitLine: {
+			            lineStyle: {
+			                type: 'dashed'
+			            }
+			        }
+			    },
+			    series: [{
+			        name: 'scatter',
+			        type: 'scatter',
+			        emphasis: {
+			            label: {
+			                show: true,
+			                position: 'left',
+			                color: 'black',
+			                fontSize: 16
+			            }
+			        },
+			        data: dataSH
+			    },
+			    {
+			        name: 'line',
+			        type: 'line',
+			        showSymbol: true,
+			        smooth: true,
+			        data: myRegression.points,
+			        markPoint: {
+			            itemStyle: {
+			                color: '#359'
+			            },
+			            label: {
+			                show: true,
+			                position: 'left',
+			                formatter: myRegression.expression,
+			                color: '#359',
+			                fontSize: 14
+			            },
+			            data: [{
+			                coord: myRegression.points[myRegression.points.length - 1]
+			            }]
+			        }
+			    }]
+			};
+			
+			chart.setOption(option);
+		</script>
+			</div>
+
+
+                </div>
+			   	
+				
+							
+              <div class="row">
+                
+				
+                    <div class="row" style="height: 40px;"></div>			
+					
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
+
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+            
+		<script src="js/try.js"></script>
+         
+		<div style="width: auto;height: auto;"></div>
+		
+     
+        </div>
+
+        <!-- SCROLL PAGE BUTTON -->
+        <!--===================================================-->
+        <button class="scroll-top btn">
+            <i class="pci-chevron chevron-up"></i>
+        </button>
+        <!--===================================================-->
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+	
+
+ 
+</script>
+</body>
+</html>
